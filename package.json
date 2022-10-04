@@ -1,6 +1,6 @@
 {
   "name": "@20minutes/content-slug",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Content slugification for 20 Minutes",
   "license": "MIT",
   "repository": "20minutes/content-slug",

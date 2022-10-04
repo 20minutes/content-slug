@@ -1,35 +1,11 @@
 {
-  "ts-node": {
-    // these options are overrides used only by ts-node
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "moduleResolution": "Node",
-    "module": "ESNext",
-    "jsx": "react",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "removeComments": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "preserveConstEnums": true,
-    "strictNullChecks": true,
-    "allowJs": false,
-    "importHelpers": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "es5",
+    "module": "commonjs",
     "declaration": true,
-    "declarationDir": "lib",
-    "emitDeclarationOnly": true
+    "outDir": "./lib",
+    "strict": true
   },
-  "include": ["./src/**/*"],
-  "exclude": ["node_modules"],
+  "include": ["src"],
+  "exclude": ["node_modules", "/tests/*"]
 }

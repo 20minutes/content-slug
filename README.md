@@ -5,10 +5,14 @@
 
 URL slugification used by 20 Minutes for content URL.
 
+## Compatibility
+
+- Requires Node.js >= 22.
+
 ## Installation
 
 ```bash
-npm install @20minutes/content-slug
+yarn add @20minutes/content-slug
 ```
 
 ## Usage

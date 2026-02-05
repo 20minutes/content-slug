@@ -351,5 +351,5 @@ export const toContentSlug = (string: string): string => {
     result = result.replace(new RegExp(`\\b${stopWord}\\b`, 'gi'), '')
   })
 
-  return convert(result).substr(0, 150)
+  return convert(result).slice(0, 150)
 }

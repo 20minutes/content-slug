@@ -28,8 +28,12 @@ describe('package interop', () => {
       'utf8'
     )
 
-    const esmResult = execFileSync('node', [esmScript], { encoding: 'utf8' }).trim()
-    const cjsResult = execFileSync('node', [cjsScript], { encoding: 'utf8' }).trim()
+    const esmResult = execFileSync('node', [esmScript], {
+      encoding: 'utf8',
+    }).trim()
+    const cjsResult = execFileSync('node', [cjsScript], {
+      encoding: 'utf8',
+    }).trim()
 
     expect(esmResult).toBe('mange-pommes')
     expect(cjsResult).toBe('mange-pommes')

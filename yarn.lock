@@ -2516,10 +2516,10 @@ update-browserslist-db@^1.2.0:
     escalade "^3.2.0"
     picocolors "^1.1.1"
 
-url-slug@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-4.0.1.tgz#e6c52589d671598339fe97a32edc415687a3489a"
-  integrity sha512-OkHgffjR6bce7jNTp5BUDBhg2IcnqSAi9DEhLH8Rhxrq84uPBMbHFzvOxniEIRpSSGBcG13LhrtNR5XzUdztfQ==
+url-slug@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-5.0.0.tgz#2270ac989e6886d6267fcf75d0d12447f9a05fdb"
+  integrity sha512-e8CH9O5G8knUDpeecTi05nMuCME3+ZyLG4gzgl2HWMDinLWO2ukhjQtIaOQmYap1sClkqjK3DzxAoOQHdXpHlQ==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

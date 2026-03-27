@@ -43,6 +43,6 @@
     "node": ">=22.0.0"
   },
   "dependencies": {
-    "url-slug": "^4.0.1"
+    "url-slug": "^5.0.0"
   }
 }

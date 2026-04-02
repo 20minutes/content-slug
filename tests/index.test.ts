@@ -26,5 +26,23 @@ describe('should convert stuff', () => {
     const longInput = Array.from({ length: 200 }, () => 'word').join(' ')
     const result = toContentSlug(longInput)
     expect(result.length).toBeLessThanOrEqual(150)
+    expect(result).not.toMatch(/-$/)
+  })
+
+  it('returns an empty slug when the input only contains stop words', () => {
+    expect(toContentSlug('le et de ou à')).toBe('')
+  })
+
+  it('normalizes repeated punctuation and underscores', () => {
+    expect(toContentSlug('Bonjour!!!___test??')).toBe('bonjour-test')
+  })
+
+  it('keeps an already normalized slug stable', () => {
+    expect(toContentSlug('deja-vu-bonjour')).toBe('deja-vu-bonjour')
+  })
+
+  it('drops unsupported non latin content instead of throwing', () => {
+    expect(toContentSlug('🍕 Café 東京')).toBe('cafe')
+    expect(toContentSlug('مرحبا بالعالم')).toBe('')
   })
 })

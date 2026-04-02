@@ -2,9 +2,11 @@ import { execFileSync } from 'node:child_process'
 import { mkdtempSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
-import { pathToFileURL } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import { describe, expect, it } from 'vitest'
 
-const projectRoot = resolve(__dirname, '..')
+const testDir = fileURLToPath(new URL('.', import.meta.url))
+const projectRoot = resolve(testDir, '..')
 const esmEntry = pathToFileURL(join(projectRoot, 'lib', 'esm', 'index.js')).href
 const cjsEntry = join(projectRoot, 'lib', 'cjs', 'index.js')
 

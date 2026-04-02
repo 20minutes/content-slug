@@ -7,10 +7,15 @@ describe('should convert stuff', () => {
     expect(unaccentize('mangé')).toBe('mange')
   })
 
+  it('unaccentize handles a broader unicode range', () => {
+    expect(unaccentize('Ångström déjà Noël')).toBe('Angstrom deja Noel')
+  })
+
   it.each([
     ['Carl', 'carl'],
     ['', ''],
     ["j'ai mangé des pommes et des poires et c'était bon !", 'mange-pommes-poires-bon'],
+    ["À l'école des Ångströms", 'ecole-angstroms'],
     ['le chien et le chat', 'chien-chat'],
     ['foo_bar_baz', 'foo-bar-baz'],
   ])('convert: %s', (input, output) => {

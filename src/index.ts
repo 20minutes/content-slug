@@ -337,5 +337,5 @@ export const toContentSlug = (string: string): string => {
   let result = unaccentize(string.toLowerCase().trim().replaceAll('_', ' '))
   result = result.replace(stopWordsPattern, '')
 
-  return convert(result).slice(0, 150)
+  return convert(result).slice(0, 150).replace(/-+$/g, '')
 }

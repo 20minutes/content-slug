@@ -8,9 +8,9 @@ updates:
     timezone: Europe/Paris
   open-pull-requests-limit: 10
   groups:
-    typescript-eslint-dependencies:
+    vitest-dependencies:
       patterns:
-        - "*typescript-eslint*"
+        - "*vitest*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:

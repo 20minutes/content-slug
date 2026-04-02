@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest'
+
 import { toContentSlug, unaccentize } from '../src/index'
 
 describe('should convert stuff', () => {
@@ -11,7 +13,7 @@ describe('should convert stuff', () => {
     ["j'ai mangé des pommes et des poires et c'était bon !", 'mange-pommes-poires-bon'],
     ['le chien et le chat', 'chien-chat'],
     ['foo_bar_baz', 'foo-bar-baz'],
-  ])('convert: %s', async (input, output) => {
+  ])('convert: %s', (input, output) => {
     expect(toContentSlug(input)).toBe(output)
   })
 

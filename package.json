@@ -24,20 +24,18 @@
     "clean": "rimraf lib",
     "build": "yarn clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.cjs",
     "typecheck": "tsc -p tsconfig.json",
-    "test": "yarn build && jest --silent false",
+    "test": "yarn build && vitest run --coverage",
     "lint": "biome check --max-diagnostics=none",
     "lint:fix": "biome check --write --unsafe --max-diagnostics=none"
   },
   "devDependencies": {
     "@20minutes/eslint-config": "^3.0.0",
-    "@types/jest": "^30.0.0",
     "@types/node": "^25.2.0",
-    "jest": "^30.2.0",
-    "prettier": "^3.8.1",
+    "@vitest/coverage-v8": "^4.1.2",
     "rimraf": "^6.0.1",
-    "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
   },
   "engines": {
     "node": ">=22.0.0"

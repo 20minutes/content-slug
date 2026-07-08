@@ -23,22 +23,26 @@
   "scripts": {
     "clean": "rimraf lib",
     "build": "yarn clean && tsc -p tsconfig.esm.json && tsc -p tsconfig.cjs.json && node scripts/write-cjs-package.cjs",
+    "es-check": "yarn es-check:esm && yarn es-check:cjs",
+    "es-check:esm": "es-check es2022 './lib/esm/**/*.js' --module --checkFeatures",
+    "es-check:cjs": "es-check es2022 './lib/cjs/**/*.js' --checkFeatures",
     "typecheck": "tsc -p tsconfig.json",
     "test": "yarn build && vitest run --coverage",
     "lint": "biome check --max-diagnostics=none",
     "lint:fix": "biome check --write --unsafe --max-diagnostics=none"
   },
   "devDependencies": {
-    "@20minutes/eslint-config": "^3.0.0",
-    "@types/node": "^26.0.1",
-    "@vitest/coverage-v8": "^4.1.2",
+    "@20minutes/eslint-config": "^3.0.4",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "es-check": "^9.6.4",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.2",
-    "vitest": "^4.1.2"
+    "vitest": "^4.1.10"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "dependencies": {
     "url-slug": "^5.0.0"

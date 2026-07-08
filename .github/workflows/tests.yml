@@ -31,6 +31,9 @@ jobs:
       - name: build
         run: yarn build
 
+      - name: es-check
+        run: yarn es-check
+
       - name: typecheck
         run: yarn typecheck
 

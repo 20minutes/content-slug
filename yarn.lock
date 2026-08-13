@@ -1059,9 +1059,9 @@ undici-types@~8.3.0:
   integrity sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==
 
 url-slug@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-5.0.1.tgz#14d2c776b1d9216076e9033465f50d9388436c40"
-  integrity sha512-k4jIFK1RHAzo97IVyvAuzAkwzkAL8FvzcNZP9xgkwqNrzRTx2NvVk7teSRkHSLwbKnmK3+5mcPgmLC6ZUogNpw==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-5.1.0.tgz#3e905ef74d1bf623456022ed87f1b3db72cdd4ed"
+  integrity sha512-9At0PCIl2gx4lKNUQbsIXql2pBCWfFMOElrRabyWoXVgbypFcjVowhBiIEWm1R/C+kBJpUBupuNoD54qfc5bgA==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

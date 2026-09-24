@@ -953,9 +953,9 @@ update-browserslist-db@^1.3.2:
     picocolors "^1.1.1"
 
 url-slug@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-5.1.0.tgz#3e905ef74d1bf623456022ed87f1b3db72cdd4ed"
-  integrity sha512-9At0PCIl2gx4lKNUQbsIXql2pBCWfFMOElrRabyWoXVgbypFcjVowhBiIEWm1R/C+kBJpUBupuNoD54qfc5bgA==
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/url-slug/-/url-slug-5.2.0.tgz#c5d3fa671491ac36ba29f690504a199412ccdaf6"
+  integrity sha512-1UXiyl5RBSXcz+QfFzULUNv+mjJRAaOg77x8sAmStdnLT5ylxyd4naoNhBj0RrMIEh/XsLXBbYOLZysfeyiXEA==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

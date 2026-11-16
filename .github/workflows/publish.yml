@@ -30,6 +30,8 @@ jobs:
           NODE_AUTH_TOKEN: unused
 
       - run: yarn build
+        env:
+          NODE_AUTH_TOKEN: unused
 
       - run: yarn test
 

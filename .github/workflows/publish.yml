@@ -29,5 +29,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: unused
 
+      - run: yarn build
+
+      - run: yarn test
+
       - name: publish
         run: npm publish --access public

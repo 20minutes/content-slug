@@ -33,6 +33,9 @@ unaccentize('mangé')
 
 - lowercases the input
 - replaces underscores with spaces before normalization
+- normalizes Unicode compatibility characters, including typographic ligatures such as `ﬃ` → `ffi`
+- transliterates `œ`/`Œ` to `oe` and `æ`/`Æ` to `ae`
+- removes soft hyphens (`U+00AD`) and zero-width spaces (`U+200B`) within words
 - removes diacritics such as `é`, `Å`, or `ç`
 - removes a built-in list of common French stop words
 - collapses punctuation and whitespace through `url-slug`
@@ -54,6 +57,12 @@ toContentSlug("À l'école des Ångströms")
 
 toContentSlug("🍕 Café 東京")
 // "cafe"
+
+toContentSlug("Le cœur de Paris")
+// "coeur-paris"
+
+toContentSlug("aﬃche")
+// "affiche"
 ```
 
 `unaccentize` only removes diacritics. It does not slugify, trim, or remove punctuation.

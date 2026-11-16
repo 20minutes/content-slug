@@ -11,6 +11,47 @@ describe('should convert stuff', () => {
     expect(unaccentize('Ångström déjà Noël')).toBe('Angstrom deja Noel')
   })
 
+  it('unaccentize leaves ligatures and compatibility characters unchanged', () => {
+    expect(unaccentize('œ Œ æ Æ ﬃ ²')).toBe('œ Œ æ Æ ﬃ ²')
+  })
+
+  it.each([
+    ['Le cœur de Paris', 'coeur-paris'],
+    ['Ma sœur et moi', 'soeur'],
+    ['Les œuvres de Monet', 'oeuvres-monet'],
+    ['Bœuf bourguignon', 'boeuf-bourguignon'],
+    ['Lætitia Casta', 'laetitia-casta'],
+    ['Œdipe roi', 'oedipe-roi'],
+    ['L’ŒUVRE de Monet', 'oeuvre-monet'],
+    ['ÆTHER', 'aether'],
+    ['ex æquo', 'ex-aequo'],
+    ['cæcum', 'caecum'],
+    ['aﬀaire', 'affaire'],
+    ['ﬁlle', 'fille'],
+    ['ﬂeur', 'fleur'],
+    ['aﬃche', 'affiche'],
+    ['souﬄer', 'souffler'],
+  ])('normalizes ligatures before removing stop words: %s', (input, output) => {
+    expect(toContentSlug(input)).toBe(output)
+  })
+
+  it.each([
+    ['co\u00adopération', 'cooperation'],
+    ['c\u200bafé', 'cafe'],
+    ['\u00ad\u200b', ''],
+  ])('ignores soft hyphens and zero-width spaces: %s', (input, output) => {
+    expect(toContentSlug(input)).toBe(output)
+  })
+
+  it.each([
+    ["l'école", 'ecole'],
+    ['l’école', 'ecole'],
+    ['lʼécole', 'ecole'],
+    ['l’école\u00a0de\u202fParis', 'ecole-paris'],
+  ])('preserves apostrophe and non-breaking space handling: %s', (input, output) => {
+    expect(toContentSlug(input)).toBe(output)
+  })
+
   it.each([
     ['Carl', 'carl'],
     ['', ''],

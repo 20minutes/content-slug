@@ -334,7 +334,17 @@ export const toContentSlug = (string: string): string => {
     return ''
   }
 
-  let result = unaccentize(string.toLowerCase().trim().replaceAll('_', ' '))
+  // Normalize before ASCII word boundaries can split words around ligatures or invisible characters.
+  let result = unaccentize(
+    string
+      .toLowerCase()
+      .trim()
+      .replaceAll('_', ' ')
+      .normalize('NFKD')
+      .replaceAll('œ', 'oe')
+      .replaceAll('æ', 'ae')
+      .replace(/[\u00ad\u200b]/g, '')
+  )
   result = result.replace(stopWordsPattern, '')
 
   return convert(result).slice(0, 150).replace(/-+$/g, '')
